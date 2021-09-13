@@ -1,0 +1,159 @@
+{% load static %}
+<html lang="en">
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $('.checkvalues').click(function()
+            {
+                var txt="";
+                $('.checkvalues:checked').each(function()
+                {
+                    txt+=$(this).val()+","
+                });
+                $('#textvalues').val(txt);
+            });
+        });
+
+
+
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="A flexible, cloud-based solution that provides voice, and video collaboration and conferencing, as well as fax, and text messaging, and audio and video conferencing so that workers can be more productive in the office, or on the go."
+    />
+    <meta
+      name="keywords"
+      content="AT&T, Microsoft Teams, Direct Routing as a Service"
+    />
+    <meta name="author" content="Sidhartha Jangam" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Stylesheet -->
+<!--    <link rel="stylesheet" href="css/style.css" />-->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+    <!-- Document Title -->
+    <title>AT&amp;T API Marketplace - Welcome</title>
+  </head>
+
+  <body>
+    <header>
+
+      <!-- Top Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#">
+<!--            <img src="img/att-ms-logo.png" alt="AT&T Logo" />-->
+            <img src="{% static 'img/att-ms-logo.png' %}"/>
+          </a>
+        </div>
+      </nav>
+
+
+      <!-- Hero Background -->
+
+
+      <!-- Bottom Nav -->
+      <nav
+        class="
+          navbar navbar-expand-lg navbar-light
+          border-bottom border-grey
+          fs-6
+        "
+      >
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#home-bottom-navbar"
+            aria-controls="home-bottom-navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="home-bottom-navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+              <li class="nav-item">
+                <a
+                  class="nav-link me-3 active"
+                  aria-current="page"
+                  href="#benefits"
+                  >Benefits</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#packages">Plans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#att-ms-your-way">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">Resources</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">Partner Portal</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <br>
+<!--    <form method="POST" action="">{%csrf_token%}-->
+<!-- <div align="center" style="arial">-->
+<!--    {%for did in did_nos%}-->
+<!--     <h4><input type="checkbox" name="did_nos" value="{{ did }}" >{{ did }}<br></h4>-->
+
+<!--  {%endfor%}-->
+<!-- </div>-->
+<!--    <br>-->
+<!--  <button class="btn-btn primary" type="submit">Purchase</button>-->
+<!--        </form>-->
+    <center>
+        <h1>Select below availabe DIDs</h1>
+<!--           {%for did in did_nos%}-->
+<!--     <h4><input type="checkbox" name="did_nos" value="{{ did }}" >{{ did }}<br></h4>-->
+
+<!--  {%endfor%}-->
+    <form action="" method="POST">{%csrf_token%}
+
+        DID nos:
+        <input type="checkbox" value="431-564-1002" class="checkvalues">431-564-1002
+        <input type="checkbox" value="431-564-1003" class="checkvalues">431-564-1003
+        <input type="checkbox" value="431-564-1004" class="checkvalues">431-564-1003
+        <input type="checkbox" value="431-564-1005" class="checkvalues">431-564-1005
+        <input type="checkbox" value="431-564-1006" class="checkvalues">431-564-1006
+        <input type="checkbox" value="431-564-1007" class="checkvalues">431-564-1007
+        <hr>
+        <input type="text" name="did_allocated" id="textvalues">
+        <input id="bt1" type="submit" value="Purchase">
+    </form>
+        </center>

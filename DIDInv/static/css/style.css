@@ -1,0 +1,109 @@
+/* Importing Open Sans Font From Google Fonts */
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Basic styles */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+section,
+p,
+label,
+.regular-text-size {
+  text-align: justify;
+  hyphens: auto;
+  font-size: 0.99rem;
+  line-height: 1.95;
+}
+
+.container {
+  max-width: 940px !important;
+}
+
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+/* Basic Styles */
+
+/* Homepage Styles Starts From Here */
+
+/* Header */
+.hero-box,
+.welcome-hero-box {
+  background-image: url("../img/hero-img.png");
+  background-size: cover;
+  background-position: center;
+  height: 45vh;
+}
+
+.v-middle {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+/* Packages section Styles */
+/* 
+#packages ul li {
+  text-align: left;
+  line-height: 2rem;
+} */
+
+/* Calling Plan  */
+#calling-plan table td:nth-child(1),
+#att-ms-your-way table td:nth-child(1) {
+  width: 35%;
+}
+
+#login-popup {
+  width: 70%;
+  margin: auto;
+  padding: 15px;
+}
+/* Footer */
+/* Ends Homepage Styles Here */
+
+/* Welcome Page */
+#welcome section {
+  margin: 44px 0;
+  padding: 0;
+}
+
+.welcome-hero-box {
+  background-position: bottom;
+  height: 17vh;
+}

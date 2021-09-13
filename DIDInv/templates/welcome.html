@@ -1,0 +1,1057 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="A flexible, cloud-based solution that provides voice, and video collaboration and conferencing, as well as fax, and text messaging, and audio and video conferencing so that workers can be more productive in the office, or on the go."
+    />
+    <meta
+      name="keywords"
+      content="AT&T, Microsoft Teams, Direct Routing as a Service"
+    />
+    <meta name="author" content="Sidhartha Jangam" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Stylesheet -->
+<!--    <link rel="stylesheet" href="css/style.css" />-->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+    <!-- Document Title -->
+    <title>AT&amp;T API Marketplace - Welcome</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#">
+<!--            <img src="img/att-ms-logo.png" alt="AT&T Logo" />-->
+            <img src="{% static 'img/att-ms-logo.png' %}" alt="AT&T Logo"/>
+          </a>
+
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold ml-auto align-center"
+          >
+            <li class="nav-item">
+              <a class="nav-link me-3 active fs-6" aria-current="page" href="#"
+                >Siddhartha</a
+              >
+            </li>
+          </ul>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#home-bottom-navbar"
+            aria-controls="home-bottom-navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+      <nav
+        class="
+          navbar navbar-expand-lg navbar-light
+          border-bottom border-grey
+          fs-6
+        "
+      >
+        <div class="container">
+          <div class="collapse navbar-collapse" id="home-bottom-navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link me-3" href="#">Welcome</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">Resources</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3 text-danger" href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="welcome-hero-box position-relative text-center text-white p-5"
+      >
+        <h1 class="lh-base">Simplified Teams Ordering Wizard</h1>
+        <h2 class="lh-lg">
+          Administer individual users or multiple users in this ordering wizard.
+        </h2>
+      </div>
+    </header>
+
+    <main id="welcome">
+      <!-- User Details Section Code Starts Here -->
+      <section id="user-details">
+        <div class="container">
+          <h2 class="fs-3 mb-4">
+            <span class="text-primary">Step One : </span>Enter User Information
+          </h2>
+
+          <form action="" name="user_submmitted_details">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="userRegion" class="form-label">
+                  Select Your Region</label
+                >
+                <select class="form-select" id="userRegion" name="userRegion">
+                  <option selected>Open this menu to select your Region</option>
+                  <option value="AMRS">AMRS</option>
+                  <option value="APAC">APAC</option>
+                  <option value="EMEA">EMEA</option>
+                  <option value="LATAM">LATAM</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="companyName" class="form-label"
+                    >Company Name</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="companyName"
+                    name="companyName"
+                    placeholder="Company Name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="projectName" class="form-label"
+                    >Project Name</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="projectName"
+                    name="projectName"
+                    placeholder="Project Name"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="projectNotes" class="form-label"
+                    >Project Comments / Notes</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="projectNotes"
+                    name="projectNotes"
+                    placeholder="Project Comments / Notes"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First Name"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    required
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="streetAddressOne" class="form-label"
+                    >Street Address One</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="streetAddressOne"
+                    name="streetAddressOne"
+                    placeholder="Street Address One"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="streetAddressTwo" class="form-label"
+                    >Street Address Two</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="streetAddressTwo"
+                    name="streetAddressTwo"
+                    placeholder="Street Address Two"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="city" class="form-label">City</label>
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="city"
+                    name="city"
+                    placeholder="city"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="stateProvince" class="form-label"
+                    >State Province</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="stateProvince"
+                    name="stateProvince"
+                    placeholder="State Province"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="postelCode" class="form-label">Postel Code</label>
+                  <input
+                    type="number"
+                    required
+                    class="form-control"
+                    id="postelCode"
+                    name="postelCode"
+                    placeholder="Postel Code"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="country" class="form-label">Country</label>
+                  <input
+                    type="text"
+                    required
+                    class="form-control"
+                    id="country"
+                    name="country"
+                    placeholder="Country"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="dealStatus" class="form-label">Deal Status</label>
+                <select class="form-select" id="dealStatus" name="dealStatus">
+                  <option selected>Open this select menu</option>
+                  <option value="Lead">Lead</option>
+                  <option value="Opportunity">Opportunity</option>
+                  <option value="In Contract">In Contract</option>
+                  <option value="Won">Won</option>
+                  <option value="Lost">Lost</option>
+                  <option value="On Hold">On Hold</option>
+                  <option value="Canceled">Canceled</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="primaryNumber" class="form-label"
+                    >Primary Contact Phone Number</label
+                  >
+                  <input
+                    type="number"
+                    required
+                    class="form-control"
+                    id="primaryNumber"
+                    name="primaryNumber"
+                    placeholder="Primary Contact Phone Number"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mt-4 form-check">
+                  <label class="form-check-label" for="doYouNeedDIDCheckbox"
+                    >Do you require new DIDs?
+                  </label>
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="doYouNeedDIDCheckbox"
+                    name="doYouNeedDIDCheckbox"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="my-3 form-check">
+                  <label class="form-check-label" for="voiceMail"
+                    >Voice Mail</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="voiceMail"
+                    name="voiceMail"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <a
+              href="#"
+              type="submit"
+              id="userDetailsSubmit"
+              name="userDetailsSubmit"
+              class="btn btn-primary"
+            >
+              Next &rarr;
+            </a>
+          </form>
+        </div>
+      </section>
+      <!-- Ends User Details Section Here -->
+
+      <!-- DID Number Provisioning Code Starts Here -->
+      <section id="did-provisioning">
+        <div class="container">
+          <div class="row">
+            <h2 class="fs-3 mb-4">
+              <span class="text-primary">DID Number Provisioning</span>
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <form name="choose_did_provisioning">
+                <div class="mb-3">
+                  <label for="didNumberType" class="form-label"
+                    >Number Type</label
+                  >
+                  <select
+                    class="form-select"
+                    id="didNumberType"
+                    name="didNumberType"
+                  >
+                    <option selected>Open this select menu</option>
+                    <option value="DID">DID</option>
+                    <option value="Toll">Toll</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="didCountry" class="form-label">Country</label>
+                  <select class="form-select" id="didCountry" name="didCountry">
+                    <option id="didCountryValue" selected></option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="didState" class="form-label">State</label>
+                  <select class="form-select" id="didState" name="didState">
+                    <option id="didStateValue" selected></option>
+                    <option value="NJ">NJ</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="didCity" class="form-label">City</label>
+                  <select class="form-select" id="didCity" name="didCity">
+                    <option id="didCityValue" selected></option>
+                    <option value="NJ">NJ</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="didNumberDisplayCount" class="form-label"
+                    >Maximum Number of Count</label
+                  >
+                  <input
+                    type="number"
+                    required
+                    class="form-control"
+                    id="didNumberDisplayCount"
+                    name="didNumberDisplayCount"
+                    placeholder="50"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="didNumberFormat" class="form-label"
+                    >Number Format</label
+                  >
+                  <input
+                    type="number"
+                    required
+                    class="form-control"
+                    id="didNumberFormat"
+                    name="didNumberFormat"
+                    placeholder="616-555-1000"
+                    value=""
+                  />
+                </div>
+
+                <a
+                  href="#"
+                  type="submit"
+                  class="btn btn-primary"
+                  id="choose_did_provisioning"
+                >
+                  Display Numbers &rarr;
+                </a>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <div id="did-generated-numbers">
+                <div id="selectAll">
+                  <input type="checkbox" name="selectAll" id="selectAllBox" />
+                  Select All
+                </div>
+                <div id="generateNumber" class="d-block"></div>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary d-none"
+                  id="purchase_number"
+                >
+                  Purchase &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Ends DID Number Provisioning -->
+
+      <!-- Select Plans Starts Here -->
+      <section id="select-plans">
+        <div class="container">
+          <h2 class="fs-3 mb-4">
+            <span class="text-primary">Step Two : </span>Package Price
+            Calculator
+          </h2>
+          <p>
+            Use this form to estimate the cost of your package by selecting your
+            options
+          </p>
+
+          <form name="chooseYourPlan">
+            <div class="row">
+              <div class="col-md-5">
+                <a
+                  href="https://bit.ly/3BOddmN"
+                  target="_blank"
+                  class="btn btn-danger W-100"
+                  >DOWNLOAD TEMPLATE FOR BULK USERS</a
+                >
+              </div>
+            </div>
+            <br />
+
+            <div class="row">
+              <div class="col-auto">
+                <label for="chooseFile" class="visually-hidden"
+                  >Upload File</label
+                >
+                <input
+                  type="file"
+                  required
+                  class="form-control"
+                  id="chooseFile"
+                  name="chooseFile"
+                />
+              </div>
+              <div class="col-auto">
+                <button
+                  type="submit"
+                  class="btn btn-primary mb-3"
+                  id="showThankYouMessage"
+                >
+                  Upload File
+                </button>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card p-4 h-100 w-100">
+                  <span class="fw-bold"
+                    >Select a Profile
+                    <span
+                      type="button"
+                      class="text-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#selectProfilePlansDetails"
+                      ><i class="fas fa-info-circle"></i></span
+                  ></span>
+                  <div class="my-3">
+                    <label for="planNoOfUsers">No Of Users</label>
+                    <input
+                      type="number"
+                      name="planNoOfUsers"
+                      id="planNoOfUsers"
+                      value="1"
+                      required
+                      class="form-control"
+                      onkeyup="planPrice('planNoOfUsers')"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="selectProfilePlan"
+                      id="planSilverProfile"
+                      value="4"
+                      onclick="planPrice('selectProfilePlan')"
+                    />
+                    <label class="form-check-label" for="planSilverProfile">
+                      Silver Profile
+                    </label>
+                  </div>
+
+                  <div class="mb-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="selectProfilePlan"
+                      id="planGoldProfile"
+                      value="6"
+                      onclick="planPrice('selectProfilePlan')"
+                    />
+                    <label class="form-check-label" for="planGoldProfile">
+                      Gold Profile
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card p-4 h-100 w-100">
+                  <span class="fw-bold mb-2"
+                    >Select a Calling Plan
+                    <span
+                      type="button"
+                      class="text-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#selectCallingPlansDetails"
+                      ><i class="fas fa-info-circle"></i></span
+                  ></span>
+                  <br />
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="selectCallingPlan"
+                      id="meteredNationaInternational"
+                      value="0"
+                      onclick="planPrice('selectCallingPlan')"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="meteredNationaInternational"
+                    >
+                      Metered National and International (Per mnute rates apply)
+                    </label>
+                  </div>
+
+                  <br />
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="selectCallingPlan"
+                      id="unlimitedNational"
+                      value="9"
+                      onclick="planPrice('selectCallingPlan')"
+                    />
+                    <label class="form-check-label" for="unlimitedNational">
+                      Unlimited National (Metered International)
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card">
+                  <table class="table">
+                    <tr>
+                      <th>Plan</th>
+                      <th>Price</th>
+                    </tr>
+                    <tr>
+                      <th>Total Estimation Price</th>
+                      <th><span id="totalEstimation">0</span></th>
+                    </tr>
+                    <tr>
+                      <td>No Of Users</td>
+                      <td><span id="noOfUsers">1</span></td>
+                    </tr>
+                    <tr>
+                      <td>Profile Price</td>
+                      <td><span id="profilePrice">0</span></td>
+                    </tr>
+                    <tr>
+                      <td>Calling Price</td>
+                      <td><span id="callingPrice">0</span></td>
+                    </tr>
+                    <tr>
+                      <td>Services</td>
+                      <td><span id="services">0</span></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <div
+              class="row border rounded p-3"
+              style="max-width: 101%; margin: auto"
+            >
+              <p class="fw-bold">
+                Select Optional Services
+                <span
+                  type="button"
+                  class="text-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#optionalServicePlanDetails"
+                  ><i class="fas fa-info-circle"></i
+                ></span>
+              </p>
+              <div class="col-md-6">
+                <div class="my-3 form-check">
+                  <label class="form-check-label" for="E911">E-911</label>
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="E911"
+                    value="1"
+                    name="servicesCheckBox"
+                    onclick="planPrice('servicesCheckBox')"
+                  />
+                </div>
+                <div class="my-3 form-check">
+                  <label class="form-check-label" for="roboCallBlock"
+                    >RoboCall Blocking</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="roboCallBlock"
+                    name="servicesCheckBox"
+                    value="2"
+                    onclick="planPrice('servicesCheckBox')"
+                  />
+                </div>
+                <div class="my-3 form-check">
+                  <label class="form-check-label" for="teamsCompliance"
+                    >Teams Compliance Recording</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="teamsCompliance"
+                    name="servicesCheckBox"
+                    value="3"
+                    onclick="planPrice('servicesCheckBox')"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="my-3 form-check">
+                  <label class="form-check-label" for="MSTeamsContactCenter"
+                    >MS Teams Contact Center</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="MSTeamsContactCenter"
+                    name="servicesCheckBox"
+                    value="4"
+                    onclick="planPrice('servicesCheckBox')"
+                  />
+                </div>
+                <div class="my-3 form-check">
+                  <label class="form-check-label" for="EFaxHosting"
+                    >E-Fax Hosting</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="EFaxHosting"
+                    name="servicesCheckBox"
+                    value="5"
+                    onclick="planPrice('servicesCheckBox')"
+                  />
+                </div>
+                <div class="my-3 form-check">
+                  <label class="form-check-label" for="performanceAnalytics"
+                    >Performance Analytics</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="performanceAnalytics"
+                    name="servicesCheckBox"
+                    value="6"
+                    onclick="planPrice('servicesCheckBox')"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="my-3">
+              <a
+                href="#"
+                type="submit"
+                class="btn btn-primary"
+                id="chooseYourPlan"
+              >
+                Next &rarr;
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+      <!-- Ends Select Plans -->
+
+      <!-- Plans Popups -->
+      <!-- Profile Plans -->
+      <div
+        class="modal fade"
+        id="selectProfilePlansDetails"
+        tabindex="-1"
+        aria-labelledby="selectProfilePlansDetailsLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="selectProfilePlansDetailsLabel">
+                Plan Details
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://bit.ly/3f7Cs9M"
+                alt="Profile Plan Details"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calling Plans -->
+
+      <div
+        class="modal fade"
+        id="selectCallingPlansDetails"
+        tabindex="-1"
+        aria-labelledby="selectCallingPlansDetailsLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="selectCallingPlansDetailsLabel">
+                Calling Plans
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://bit.ly/3zPqRnW"
+                alt="Calling Plans"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Plans -->
+      <div
+        class="modal fade"
+        id="optionalServicePlanDetails"
+        tabindex="-1"
+        aria-labelledby="optionalServicePlanDetailsLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="optionalServicePlanDetailsLabel">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">optionalServicePlanDetails</div>
+          </div>
+        </div>
+      </div>
+
+      <section id="summaryReport" class="regular-text-size">
+        <div class="container">
+          <table class="table table-bordered border-primary m-auto">
+            <thead class="text-center">
+              <tr>
+                <th class="text-center" colspan="3">
+                  <h3>Summary</h3>
+                </th>
+              </tr>
+              <tr>
+                <th class="text-center" colspan="3">Selected Plan Details</th>
+              </tr>
+              <tr>
+                <th># Item</th>
+                <th># Plan Details</th>
+                <th>Cost / Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2">No Of Users</td>
+                <td><span id="summaryNoOfusers"></span></td>
+              </tr>
+              <tr>
+                <td>Profile Price</td>
+                <td><span id="summaryProfilePriceLable"></span></td>
+                <td><span id="summaryProfilePrice"></span></td>
+              </tr>
+              <tr>
+                <td>Calling Plan</td>
+                <td><span id="summaryCallingPlanLable"></span></td>
+                <td><span id="summaryCallingPlan"></span></td>
+              </tr>
+              <tr>
+                <td>Services</td>
+                <td>
+                  <span id="summarySelectedServicesLables"></span>
+                </td>
+                <td><span id="summarySelectedServices"></span></td>
+              </tr>
+              <tr>
+                <th colspan="2">Total Estimation Price</th>
+                <th><span id="summarytotalEstimation"></span></th>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-bordered border-primary m-auto">
+            <thead>
+              <tr>
+                <th class="text-center" colspan="2">User Details</th>
+              </tr>
+              <tr>
+                <th scope="col">#Details</th>
+                <th scope="col">Contact Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Region</td>
+                <td><span id="userregion"></span></td>
+              </tr>
+              <tr>
+                <td>company Name</td>
+                <td><span id="usercompanyName"></span></td>
+              </tr>
+              <tr>
+                <td>Project Name</td>
+                <td><span id="userProjectName"></span></td>
+              </tr>
+              <tr>
+                <td>Project Notes</td>
+                <td><span id="userProjectNotes"></span></td>
+              </tr>
+              <tr>
+                <td>Deal Status</td>
+                <td><span id="userDealStatus"></span></td>
+              </tr>
+              <tr>
+                <td>First Name</td>
+                <td><span id="userFirstName"></span></td>
+              </tr>
+              <tr>
+                <td>Last Name</td>
+                <td><span id="userlastName"></span></td>
+              </tr>
+              <tr>
+                <td>Email I'd</td>
+                <td><span id="useremailId"></span></td>
+              </tr>
+              <tr>
+                <td>Primary Contact Phone Number</td>
+                <td><span id="uPrimaryNumber"></span></td>
+              </tr>
+              <tr>
+                <td>Do you require new DIDs?</td>
+                <td><span id="userdidNumber"></span></td>
+              </tr>
+              <tr>
+                <td>DID Number(s)</td>
+                <td><span id="pickedNumbers"></span></td>
+              </tr>
+              <tr>
+                <td>Voice Mail</td>
+                <td><span id="uservoiceMail"></span></td>
+              </tr>
+              <tr>
+                <td>Street Address 1</td>
+                <td><span id="userstreetAddress1"></span></td>
+              </tr>
+              <tr>
+                <td>Street Address 2</td>
+                <td><span id="userstreetAddress2"></span></td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td><span id="usercity"></span></td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td><span id="userstate"></span></td>
+              </tr>
+              <tr>
+                <td>Postal Code</td>
+                <td><span id="userpostalcode"></span></td>
+              </tr>
+              <tr>
+                <td>Country</td>
+                <td><span id="usercountry"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="regular-text-size">
+      <div class="container">
+        <strong>Note:</strong>
+        <br />
+        * DID numbers submitted for AT&T MS Teams Direct Routing will be ported
+        from your existing carrier to AT&T. <br />
+        * Porting will be scheduled in concert with your company's migration
+        date to AT&T Direct Routing at the best available schedule. <br />
+        * Bring Your Own Carrier (BYOC) will not require DID porting but will
+        require SIP Trunk integration to AT&T carrier services.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

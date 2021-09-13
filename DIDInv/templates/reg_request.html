@@ -1,0 +1,178 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="A flexible, cloud-based solution that provides voice, and video collaboration and conferencing, as well as fax, and text messaging, and audio and video conferencing so that workers can be more productive in the office, or on the go."
+    />
+    <meta
+      name="keywords"
+      content="AT&T, Microsoft Teams, Direct Routing as a Service"
+    />
+    <meta name="author" content="Sidhartha Jangam" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Stylesheet -->
+<!--    <link rel="stylesheet" href="css/style.css" />-->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+    <!-- Document Title -->
+    <title>AT&amp;T API Marketplace - Welcome</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#">
+<!--            <img src="img/att-ms-logo.png" alt="AT&T Logo" />-->
+            <img src="{% static 'img/att-ms-logo.png' %}" alt="AT&T Logo"/>
+          </a>
+
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold ml-auto align-center"
+          >
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link me-3 active fs-6" aria-current="page" href="#"-->
+<!--                >Siddhartha</a-->
+<!--              >-->
+<!--            </li>-->
+          </ul>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#home-bottom-navbar"
+            aria-controls="home-bottom-navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+      <nav
+        class="
+          navbar navbar-expand-lg navbar-light
+          border-bottom border-grey
+          fs-6
+        "
+      >
+        <div class="container">
+          <div class="collapse navbar-collapse" id="home-bottom-navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold ml-auto">
+
+              <li class="nav-item active">
+                <a class="nav-link me-3" href="#">Welcome</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#">Resources</a>
+               <li class="nav-item">
+              {% if user.is_authenticated %}
+
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+
+
+              {% endif %}
+                <li class="nav-item">
+              {% if user.is_authenticated %}
+                <a class="nav-link me-3" href="#">{{user.username}}</a>
+              {% endif %}
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link me-3 text-danger" href="#">Logout</a>-->
+<!--              </li>-->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="welcome-hero-box position-relative text-center text-white p-5"
+      >
+        <h1 class="lh-base">Simplified Teams Ordering Wizard</h1>
+        <h2 class="lh-lg">
+          Administer individual users or multiple users in this ordering wizard.
+        </h2>
+      </div>
+    </header>
+
+    <main id="welcome">
+      <!-- User Details Section Code Starts Here -->
+      <section id="user-details">
+        <div class="container">
+          <h2 class="fs-3 mb-4">
+            <span class="text-primary">Step One : </span>Enter User Information
+          </h2>
+
+       <form method="POST" action="">{%csrf_token%}
+                {{form|crispy}}
+         <br>
+         <button class="btn btn-primary" type="submit">Next &rarr;</button>
+<!--           <a-->
+<!--              href=""-->
+<!--              type="submit"-->
+<!--              id="userDetailsSubmit"-->
+<!--              name="userDetailsSubmit"-->
+<!--              class="btn btn-primary"-->
+<!--            >-->
+<!--              Next &rarr;-->
+<!--            </a>-->
+       </form>
+
+        </div>
+      </section>
+
+
+    </main>
+
+    <footer class="regular-text-size">
+      <div class="container">
+        <strong>Note:</strong>
+        <br />
+        * DID numbers submitted for AT&T MS Teams Direct Routing will be ported
+        from your existing carrier to AT&T. <br />
+        * Porting will be scheduled in concert with your company's migration
+        date to AT&T Direct Routing at the best available schedule. <br />
+        * Bring Your Own Carrier (BYOC) will not require DID porting but will
+        require SIP Trunk integration to AT&T carrier services.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- <label for="value">Value to concatenate: </label></th>
+        <input id="value" name="value" type="text" /> <br><br> -->
+        {{ form.as_table }}
+        
+        <input type="hidden" name="action" value="concatenate" />
+        <br><br><input type="submit" name="apply" value="Concatenate" />
+    </form>
+{% endblock %}

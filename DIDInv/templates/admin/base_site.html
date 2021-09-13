@@ -1,0 +1,20 @@
+{%extends 'admin/base.html'%} {%load static%} {% block branding%}
+
+<h1 id="head">
+<img src="{% static 'images/logo3.png'%}"height="80px"/>
+</h1>
+{%endblock%} {%block extrastyle%}
+<link rel="stylesheet" href="{% static 'css/adminstyle.css'%}"/>
+{%endblock%}
+
+{% block userlinks %}
+    {% if site_url and request.user.groups.all.0.name != 'Connx-A' %}
+    {% if request.user.groups.all.0.name != 'Connx-B' %}
+        <a class = "nav-link" href="{{ site_url }}">Back to Home</a> /
+    {% endif %}
+    {% endif %}
+    {% if user.has_usable_password %}
+        <a class = "nav-link" href="{% url 'admin:password_change' %}">Change password</a> /
+    {% endif %}
+    <a class = "nav-link" href="{% url 'admin:logout' %}">Log out</a>
+{% endblock userlinks %}

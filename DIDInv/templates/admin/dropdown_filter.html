@@ -1,0 +1,122 @@
+{% load i18n %}
+{% load customtags %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+window.onload = function(){
+let query_params = new URLSearchParams(window.location.search)
+let all_params = Object.fromEntries(query_params.entries())
+Object.entries(all_params).forEach((item)=>{
+let filter = item[0]
+let values = item[1].split(",")
+values.forEach((value)=>{
+$("#"+filter).find("li").find("input").each(function(){
+    if($(this).val() == value){
+          $(this).prop('checked', true)
+    }
+    })
+})
+})
+}
+
+var go_from_select = function(opt) {
+window.location = window.location.pathname + opt
+ };
+
+function Dropdown(title, close=null) {
+    if(close){
+        document.querySelector("#"+title).style.display = "none"
+    }
+    else{
+    if (document.querySelector("#"+title).style.display === "block") {
+        document.querySelector("#"+title).style.display = "none"
+    }
+    else {
+        document.querySelector("#"+title).style.display = "block"
+    }
+    }
+}
+
+function applyFilters(q_string){
+    Dropdown(q_string, true)
+    let selected_li_items = []
+    let prev_selected_items = {}
+    $("[gen-id=dfilters]").not("#"+q_string).find("li").find("input").each(function(){
+    if($(this).prop('checked') == true){
+          ele = prev_selected_items[$(this).attr("filter")]
+          if(ele && ele.length){
+          ele.push($(this).val())
+          }
+          else{
+          prev_selected_items[$(this).attr("filter")] = []
+          prev_selected_items[$(this).attr("filter")].push($(this).val())
+          }
+    }
+    })
+    if(Object.entries(prev_selected_items).length){
+    let prev_qstring = "?"
+    Object.entries(prev_selected_items).forEach((item)=>{
+       prev_qstring += item[0] + "=" + encodeURIComponent(item[1].join(",")).replace('!', '%21')
+    })
+    $("#"+q_string).find("li").find("input").each(function(){
+    if($(this).prop('checked') == true){
+          selected_li_items.push($(this).val())
+    }
+    })
+    let urlencoded_qstring=""
+    if(selected_li_items.length){
+     urlencoded_qstring = "&"+q_string+"="+encodeURIComponent(selected_li_items.join(","))
+    }
+    let final_qstring = prev_qstring+urlencoded_qstring.replace('!', '%21')
+    .replace('\'', '%27')
+    .replace('(', '%28')
+    .replace(')', '%29')
+    .replace('*', '%2A')
+    .replace('%20', '+');
+    go_from_select(final_qstring)
+    }
+    else{
+
+    $("#"+q_string).find("li").find("input").each(function(){
+    if($(this).prop('checked') == true){
+          selected_li_items.push($(this).val())
+    }
+    })
+    urlencoded_qstring = "?"+q_string+"="+encodeURIComponent(selected_li_items.join(",")).replace('!', '%21')
+    .replace('\'', '%27')
+    .replace('(', '%28')
+    .replace(')', '%29')
+    .replace('*', '%2A')
+    .replace('%20', '+');
+    if(selected_li_items.length) go_from_select(urlencoded_qstring)
+    }
+    //onclick="go_from_select(this.options[this.selectedIndex].value)"
+}
+</script>
+
+<ul class="admin-filter-{{ title|cut:' ' }}">
+    {% if choices|slice:"2:" %}
+    <div class="selectoptions-parent">
+        <div class="selectoptions" onclick="Dropdown('{{title|generatequerystring|safe}}')">
+            <button class="drp-btn" dropdwonblock="true">{{title}}</button>
+        </div>
+        <div class="options-blk" id='{{title|generatequerystring}}' gen-id="dfilters">
+            <div class="options">
+                <ul class="options-list">
+                    {% for choice in choices %}
+                    <li><input type="checkbox" value='{{ choice.display }}'  filter='{{title|generatequerystring}}'><span> {{ choice.display }}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="apply-btn"><input type="button" value="Apply" onclick="applyFilters('{{title|generatequerystring}}')"></div>
+        </div>
+    </div>
+    {% else %}
+    {% for choice in choices %}
+    <li {% if choice.selected %} class="selected"{% endif %}>
+        <a href="{{ choice.query_string|iriencode }}">{{ choice.display }}</a></li>
+    {% endfor %}
+
+    {% endif %}
+    {% with choices.0 as all_choice %}{% if not all_choice.selected %}<strong><a href="{{ all_choice.query_string }}">x {% trans 'Remove' %}</a></strong>{% endif %}{% endwith %}
+</ul>

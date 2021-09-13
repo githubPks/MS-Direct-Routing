@@ -1,0 +1,8 @@
+{% extends 'admin/import_export/change_list_import_export.html' %}
+{% load static %}
+{% block object-tools %}
+    <label for="document">Import File Template Here:</label></th>
+    <a href="{% static 'download-template.xlsx' %}" download  class="btn btn-primary btn-sm">Download</a>
+    <br />
+    {{ block.super }}
+{% endblock %}

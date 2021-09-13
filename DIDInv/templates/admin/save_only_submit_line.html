@@ -1,0 +1,8 @@
+{% load i18n %}
+<div class="submit-row" {% if is_popup %}style="overflow: auto;"{% endif %}>
+<p class="deletelink-box"><a href="javascript:javascript:history.go(-1)"class="deletelink">Cancel</a></p>
+<input type="submit" value="{% trans 'Save' %}" class="default" name="_save"/>
+
+</div>
+
+
